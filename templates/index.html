@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+        <div style = "display: flex; justify-content: center;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Full Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for name in names %}
+                        <tr>
+                            <td>{{name['first_name']}}</td>
+                            <td>{{name['last_name']}}</td>
+                            <td>{{name['full_name']}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
+
